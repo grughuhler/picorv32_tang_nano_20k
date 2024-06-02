@@ -1,0 +1,34 @@
+This directory contains a simple C program that runs on the
+picorv32 core on the simple SoC.
+
+The build environment is limited. Some things to know:
+
+* BSS (data not explicitly initialized) is NOT set to zero.
+* No standard library functions are available.
+* It's possible I missed some section type in the linker
+  command file.
+* The SoC has limitted SRAM so program cannot be large.  See Makefile
+  for setting the memory size.  The Tang Nano 20K supports 65536 bytes.
+  The Tang Nano 9K supports only 32768.
+* There is no provision for interrupt handlers.
+
+You will need the gcc cross compiler for riscv.  On Ubuntu 22.04,
+
+  sudo apt install gcc-riscv64-unknown-elf binutils-riscv64-unknown-elf
+
+Basically, edit main.c and "make".  This will create files in the
+Verilog source directory (see conv_init.c)-- so you need to rebuild
+and reload the FPGA bitfile.
+
+Program conv_to_init inputs a binary version of the image and creates
+memory initialization files (and some other files).
+
+The system clock speed is set in the Makefile.
+
+Hints:
+
+  riscv64-unknown-elf-objdump -d prog.elf will disassemble the code.
+
+  riscv64-unknown-elf-objdump -x prog.elf shows sections and addresses.
+
+  riscv64-unknown-elf-nm --numeric-sort shows symbols and addresses.

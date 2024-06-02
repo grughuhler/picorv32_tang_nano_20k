@@ -1,0 +1,53 @@
+This directory contains a simple SoC that uses the risc-v (32-bit)
+core from https://github.com/YosysHQ/picorv32.  File picorv32.v is
+from there.  It is the core.
+
+It is for the Tang Nano 20K FPGA development board.  There is a
+similar project for the Tang Nano 9K:
+
+   https://github.com/grughuhler/picorv32.git
+
+This repository is based on the infer_sram branch of that one.
+
+The Tang Nano 20K has a clock generation chip that feeds a clock to
+pin 10.  This project assumes this as the clock source.  To configure
+this clock to 20 MHz (the default set in Makefile):
+
+1.  Connect Tang Nano 20K USB to a computer.
+2.  Open a terminal emulator (115200).  I like picocom on Linux.
+3.  Enter control-x followed by control-c and enter.  You should
+    get prompt "TangNano20K".
+4.  Enter command "pll_clk O0=20M -s".  Note that's leter "O" and zero.
+5.  Enter command "choose uart" to return to connection to a UART
+    implemented on the FPGA.
+
+File top.v is the top level module and integrates the SoC's
+components which are:
+
+* The risc-v core.
+* SRAM memory (see Makefile to set size)
+* A small reset controller.
+* A UART (wrapper around the simpleuart from
+  https://github.com/YosysHQ/picorv32).
+* An LED driver that supports read and write.
+* A 32-bit count-down timer that can be read and written.
+  It counts down to zero and stops.
+* A controller for the WS2812B RGB LED on the Tang Nano 20K.
+
+The project is intended to be very simple and direct.  There are no
+integration abstractions.
+
+It was built using the educational version of the Gowin IDE and
+tool chain, 1.9.9 Beta-4 Education Build(68283).
+
+The Gowin IDE should build it.  See the README in directory c_code for
+information on how to build the software.  The program already in the
+memory initialization files accepts one-letter commands.  S1 is the
+reset button.  Serial port: 115200, no parity, no flow control.
+
+The SRAM is initialized by the C code and then the Verilog build
+process.  This is how the software is "loaded".  See README in
+the c_code directory.
+
+See https://www.youtube.com/@electronics.tinker/videos about Tang Nano
+FPGAs.

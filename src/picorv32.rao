@@ -1,0 +1,96 @@
+<?xml version="1" encoding="UTF-8"?>
+<GAO_CONFIG>
+    <Version>3.0</Version>
+    <Mode>Standard</Mode>
+    <AoCore index="0" sample_clock="clk" trig_type="0" storage_depth="4096" window_num="1" capture_amount="4096" implementation="0" trigger_pos="1" module_name="top" force_trigger_by_falling_edge="false">
+        <SignalList>
+            <Signal>mem_valid</Signal>
+            <Signal>mem_instr</Signal>
+            <Signal>mem_ready</Signal>
+            <Bus name="mem_wstrb[3:0]">
+                <Signal>mem_wstrb[3]</Signal>
+                <Signal>mem_wstrb[2]</Signal>
+                <Signal>mem_wstrb[1]</Signal>
+                <Signal>mem_wstrb[0]</Signal>
+            </Bus>
+            <Bus name="mem_rdata[31:0]">
+                <Signal>mem_rdata[31]</Signal>
+                <Signal>mem_rdata[30]</Signal>
+                <Signal>mem_rdata[29]</Signal>
+                <Signal>mem_rdata[28]</Signal>
+                <Signal>mem_rdata[27]</Signal>
+                <Signal>mem_rdata[26]</Signal>
+                <Signal>mem_rdata[25]</Signal>
+                <Signal>mem_rdata[24]</Signal>
+                <Signal>mem_rdata[23]</Signal>
+                <Signal>mem_rdata[22]</Signal>
+                <Signal>mem_rdata[21]</Signal>
+                <Signal>mem_rdata[20]</Signal>
+                <Signal>mem_rdata[19]</Signal>
+                <Signal>mem_rdata[18]</Signal>
+                <Signal>mem_rdata[17]</Signal>
+                <Signal>mem_rdata[16]</Signal>
+                <Signal>mem_rdata[15]</Signal>
+                <Signal>mem_rdata[14]</Signal>
+                <Signal>mem_rdata[13]</Signal>
+                <Signal>mem_rdata[12]</Signal>
+                <Signal>mem_rdata[11]</Signal>
+                <Signal>mem_rdata[10]</Signal>
+                <Signal>mem_rdata[9]</Signal>
+                <Signal>mem_rdata[8]</Signal>
+                <Signal>mem_rdata[7]</Signal>
+                <Signal>mem_rdata[6]</Signal>
+                <Signal>mem_rdata[5]</Signal>
+                <Signal>mem_rdata[4]</Signal>
+                <Signal>mem_rdata[3]</Signal>
+                <Signal>mem_rdata[2]</Signal>
+                <Signal>mem_rdata[1]</Signal>
+                <Signal>mem_rdata[0]</Signal>
+            </Bus>
+        </SignalList>
+        <Triggers>
+            <Trigger index="0">
+                <SignalList>
+                    <Signal>mem_valid</Signal>
+                </SignalList>
+            </Trigger>
+            <Trigger index="1"/>
+            <Trigger index="2"/>
+            <Trigger index="3"/>
+            <Trigger index="4"/>
+            <Trigger index="5"/>
+            <Trigger index="6"/>
+            <Trigger index="7"/>
+            <Trigger index="8"/>
+            <Trigger index="9"/>
+            <Trigger index="10"/>
+            <Trigger index="11"/>
+            <Trigger index="12"/>
+            <Trigger index="13"/>
+            <Trigger index="14"/>
+            <Trigger index="15"/>
+        </Triggers>
+        <MatchUnits>
+            <MatchUnit index="0" enabled="1" match_type="1" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="R" value1="0" trigger="0"/>
+            <MatchUnit index="1" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="2" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="3" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="4" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="5" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="6" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="7" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="8" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="9" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="10" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="11" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="12" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="13" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="14" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="15" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+        </MatchUnits>
+        <Expressions type="Static">
+            <Expression>M0</Expression>
+        </Expressions>
+    </AoCore>
+    <GAO_ID>1111011100011111</GAO_ID>
+</GAO_CONFIG>

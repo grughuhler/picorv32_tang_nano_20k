@@ -1,0 +1,38 @@
+//Copyright (C)2014-2023 Gowin Semiconductor Corporation.
+//All rights reserved. 
+//File Title: Physical Constraints file
+//GOWIN Version: 1.9.9 Beta-4 Education
+//Part Number: GW1NR-LV9QN88PC6/I5
+//Device: GW1NR-9
+//Device Version: C
+//Created Time: Tue 05 14 15:42:04 2024
+
+IO_LOC "leds[5]" 16;
+IO_PORT "leds[5]" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "leds[4]" 15;
+IO_PORT "leds[4]" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "leds[3]" 14;
+IO_PORT "leds[3]" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "leds[2]" 13;
+IO_PORT "leds[2]" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "leds[1]" 11;
+IO_PORT "leds[1]" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "leds[0]" 10;
+IO_PORT "leds[0]" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "uart_tx" 17;
+IO_PORT "uart_tx" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC "uart_rx" 18;
+IO_PORT "uart_rx" IO_TYPE=LVCMOS33 PULL_MODE=NONE PCI_CLAMP=OFF BANK_VCCIO=3.3;
+
+IO_LOC "reset_button_n" 4;
+IO_PORT "reset_button_n" PULL_MODE=UP PCI_CLAMP=OFF BANK_VCCIO=1.8;
+
+IO_LOC "clk_in" 52;
+IO_PORT "clk_in" IO_TYPE=LVCMOS33 PULL_MODE=NONE PCI_CLAMP=OFF BANK_VCCIO=3.3;
