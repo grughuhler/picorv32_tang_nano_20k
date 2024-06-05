@@ -1,3 +1,10 @@
+/* Copyright 2024 Grug Huhler.  License SPDX BSD-2-Clause.
+ *
+ * This wrapper implements the bus interface to attach a ws2812b
+ * instance to a PicoRV32.
+ * 
+ */
+
 module ws2812b_tgt #(parameter CLK_FREQ = 20e6)
 (
       input wire clk,
