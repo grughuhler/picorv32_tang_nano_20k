@@ -9,11 +9,3 @@
 _start:
 	li x2, 4*(1<<SRAM_ADDR_WIDTH)
 	call main
-
-	.globl	clk_freq
-	.section	.sdata,"aw"
-	.align	2
-	.type	clk_freq, @object
-	.size	clk_freq, 4
-clk_freq:
-	.word	CLK_FREQ

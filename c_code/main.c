@@ -12,8 +12,6 @@
 #include "uart.h"
 #include "countdown_timer.h"
 
-extern int clk_freq; /* See Makefile and startup.s */
-
 #define MEMSIZE 512
 unsigned int mem[MEMSIZE];
 unsigned int test_vals[] = {0, 0xffffffff, 0xaaaaaaaa, 0x55555555, 0xdeadbeef};
@@ -189,10 +187,10 @@ int main()
   la_wtest();
   la_rtest();
 
-  uart_set_div(clk_freq/115200.0 + 0.5);
+  uart_set_div(CLK_FREQ/115200.0 + 0.5);
   
-  uart_puts("\r\nStarting, clk_freq: 0x");
-  uart_print_hex(clk_freq);
+  uart_puts("\r\nStarting, CLK_FREQ: 0x");
+  uart_print_hex(CLK_FREQ);
   uart_puts("\r\n\r\n");
 
   while (1) {
@@ -214,7 +212,7 @@ int main()
       endian_test();
       break;
     case 'd':
-      cdt_delay(3*clk_freq);
+      cdt_delay(3*CLK_FREQ);
       uart_puts("delay done\r\n");
       break;
     case 'g':

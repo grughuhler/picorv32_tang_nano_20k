@@ -28,8 +28,7 @@ CLK_FREQ = 20000000
 
 COMMONFLAGS = -march=rv32i2p0 -mabi=ilp32
 CFLAGS = -mno-save-restore $(COMMONFLAGS) -nostartfiles -nostdlib -static -O1
-ASFLAGS = --defsym SRAM_ADDR_WIDTH=$(SRAM_ADDR_WIDTH) \
-          --defsym CLK_FREQ=$(CLK_FREQ) $(COMMONFLAGS)
+ASFLAGS = --defsym SRAM_ADDR_WIDTH=$(SRAM_ADDR_WIDTH) $(COMMONFLAGS)
 LIBS = /usr/lib/gcc/riscv64-unknown-elf/10.2.0/rv32i/ilp32/libgcc.a
 
 CC = riscv64-unknown-elf-gcc
@@ -43,7 +42,7 @@ conv_to_init: conv_to_init.c
 	gcc -o conv_to_init conv_to_init.c
 
 main.o: main.c
-	$(CC) $(CFLAGS) -c main.c
+	$(CC) $(CFLAGS) -DCLK_FREQ=$(CLK_FREQ) -c main.c
 
 countdown_timer.o: countdown_timer.c
 	$(CC) $(CFLAGS) -c countdown_timer.c
