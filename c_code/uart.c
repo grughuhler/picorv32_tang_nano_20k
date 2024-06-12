@@ -3,7 +3,7 @@
 
 #include "uart.h"
 
-#define UART_DIV ((volatile unsigned char *) 0x80000008)
+#define UART_DIV ((volatile unsigned int *) 0x80000008)
 #define UART_DATA ((volatile unsigned char *) 0x8000000c)
 
 void uart_set_div(unsigned int div)
